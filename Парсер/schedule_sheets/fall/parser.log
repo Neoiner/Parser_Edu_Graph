@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "../../parser.py", line 14, in <module>
+    asyncio.get_event_loop().run_until_complete(parse(schedule_files_path=schedule_files_path, dryrun=False))
+  File "/usr/lib64/python3.6/asyncio/base_events.py", line 484, in run_until_complete
+    return future.result()
+  File "/var/www/chappy/data/Parser EduGraph/Парсер/helper_functions/utils.py", line 25, in parse
+    await parse_file(folderpath=schedule_files_path, filename=file, dryrun=dryrun)
+  File "/var/www/chappy/data/Parser EduGraph/Парсер/helper_functions/file_level_parsing.py", line 9, in parse_file
+    workbook = load_workbook(filepath)
+  File "/usr/local/lib/python3.6/site-packages/openpyxl/reader/excel.py", line 316, in load_workbook
+    data_only, keep_links)
+  File "/usr/local/lib/python3.6/site-packages/openpyxl/reader/excel.py", line 124, in __init__
+    self.archive = _validate_archive(fn)
+  File "/usr/local/lib/python3.6/site-packages/openpyxl/reader/excel.py", line 96, in _validate_archive
+    archive = ZipFile(filename, 'r')
+  File "/usr/lib64/python3.6/zipfile.py", line 1131, in __init__
+    self._RealGetContents()
+  File "/usr/lib64/python3.6/zipfile.py", line 1198, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
